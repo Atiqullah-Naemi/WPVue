@@ -38,10 +38,6 @@ function get_additional_post_data($arr)
 
 	$gallery = acf_photo_gallery('image_gallery', $post->ID);
 
-	if ($gallery) {
-		$data['gallery_image'] = $gallery;
-	}
-
 	$data['thumbnail'] = get_the_post_thumbnail_url($arr['id'], 'wpvue-thumb');
 
 	return $data;

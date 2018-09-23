@@ -6,9 +6,10 @@
 		  	:alt="post.title.rendered">
 		</router-link>
 	  	<div class="card-body">
-	    	<h5 class="card-title">  {{post.title.rendered}} </h5>
+	  		<router-link :to="'post/' + post.slug + '/' + post.id">
+	    		<h5 class="card-title">  {{post.title.rendered}} </h5>
+	    	</router-link>
 	    	<p class="card-text">  {{post.wpvue.post_exp}} </p>
-	    	<router-link :to="'post/' + post.slug + '/' + post.id">Continue Reading <i class="fa fa-long-arrow-alt-right"></i></router-link>
 	  </div>
 	</div>
 </template>

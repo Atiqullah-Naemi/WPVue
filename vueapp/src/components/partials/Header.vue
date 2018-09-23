@@ -36,7 +36,6 @@
 		        type: 'get',
 		        success: (result) => {
 		          this.menu_items = result
-		          console.log('menus '+result)
 		        }
 		      })
 		    }
