@@ -28,17 +28,12 @@
         </nav>
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <transition-group
-            tag="div"
-            class="row"
-            name="post-excerpt"
-            >
+            <div class="row">
               <post-excerpt
-              v-for="post in searchPost"
-              :key="post.id"
-              :post="post"
+              v-for="post in searchPost" :key="post.id" :post="post"
+              data-aos="zoom-in-up" data-aos-duration="1500"
               class="col-4 col-lg-4 col-md-4 col-sm-12 col-xs-12"></post-excerpt>
-            </transition-group>
+            </div>
           </div>
         </div>
       </div>
@@ -46,6 +41,8 @@
 </template>
 
 <script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 export default {
   data () {
     return {
@@ -59,6 +56,7 @@ export default {
     }
   },
   created() {
+    AOS.init()
     this.getposts()
     this.getCategories()
   },
@@ -135,26 +133,6 @@ export default {
           color: #fff;
           background: #17a2b8;
         }
-      }
-    }
-    .tab-content {
-      .post-excerpt-enter-active,
-      .post-excerpt-leave-active {
-        transition: all 3s;
-      }
-
-      .post-excerpt-enter,
-      .post-excerpt-leave-to {
-        transform: translateX(1rem);
-        opacity: 0;
-      }
-
-      .post-excerpt-leave-active {
-        position: absolute;
-      }
-
-      .post-excerpt-move {
-        transition: all 3s;
       }
     }
     .search-container {

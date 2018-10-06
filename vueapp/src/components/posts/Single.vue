@@ -56,6 +56,9 @@
             background-size: cover !important;
             background-position: center !important;
             margin: 30px 0;
+            &:hover {
+                background-blend-mode: unset;
+            }
         }
     }
 </style>
